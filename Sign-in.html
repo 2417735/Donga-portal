@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Sign In</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* Add some padding for smaller screens */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+        .login-container {
+            background-color: #fff;
+            @apply shadow-2xl rounded-xl p-8 md:p-12 lg:p-16 w-full max-w-md; /* Responsive padding and width */
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.5rem; /* text-5xl */
+            font-weight: 800; /* font-extrabold */
+            color: #dc2626; /* Red color */
+            margin-bottom: 2rem;
+            letter-spacing: -0.05em; /* tighter letter spacing */
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.95rem; /* text-base */
+            font-weight: 600; /* font-semibold */
+            color: #4b5563; /* text-gray-600 */
+            margin-bottom: 0.5rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.85rem 1rem; /* Slightly more padding */
+            border: 1px solid #d1d5db; /* border-gray-300 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-size: 1rem; /* text-base */
+            color: #1f2937; /* text-gray-800 */
+            background-color: #f9fafb; /* bg-gray-50 */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #ef4444; /* red-500 */
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3); /* red-500 with opacity */
+        }
+        .login-button {
+            width: 100%;
+            background-color: #dc2626; /* Red background */
+            color: #fff;
+            padding: 1rem 1.5rem; /* Larger padding */
+            border-radius: 0.75rem; /* rounded-xl */
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 700; /* font-bold */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 1.5rem;
+        }
+        .login-button:hover {
+            background-color: #b91c1c; /* Darker red */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        .links-container {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #6b7280; /* text-gray-500 */
+        }
+        .links-container a {
+            color: #dc2626; /* Red link color */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .links-container a:hover {
+            color: #b91c1c; /* Darker red on hover */
+            text-decoration: underline;
+        }
+        .separator {
+            margin: 1.5rem 0;
+            position: relative;
+            text-align: center;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #e5e7eb; /* border-gray-200 */
+            z-index: 0;
+        }
+        .separator span {
+            background-color: #fff;
+            padding: 0 10px;
+            position: relative;
+            z-index: 1;
+            color: #9ca3af; /* text-gray-400 */
+            font-size: 0.875rem;
+        }
+        .social-login button {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #fff;
+            color: #374151; /* text-gray-700 */
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .social-login button:hover {
+            background-color: #f3f4f6; /* bg-gray-100 */
+            border-color: #9ca3af;
+        }
+        .social-login .icon {
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">PORTAL</div>
+        <form>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Sign In</button>
+        </form>
+        <div class="links-container">
+            <p><a href="#">Forgot password?</a></p>
+            <p class="mt-4">Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+
+        <div class="separator"><span>OR</span></div>
+
+        <div class="social-login flex flex-col gap-4">
+            <button>
+                <span class="icon">G</span> <!-- Placeholder for Google Icon -->
+                Continue with Google
+            </button>
+            <button>
+                <span class="icon">A</span> <!-- Placeholder for Apple Icon -->
+                Continue with Apple
+            </button>
+        </div>
+    </div>
+</body>
+</html>
